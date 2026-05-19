@@ -1,8 +1,8 @@
 import "./index.css";
 
-import CandidateForm from "./components/CandidateForm";
-import CandidateList from "./components/CandidateList";
-import MatchCandidates from "./components/MatchCandidates";
+import ComplaintForm from "./components/ComplaintForm";
+import ComplaintList from "./components/ComplaintList";
+import ComplaintAnalysis from "./components/ComplaintAnalysis";
 
 function App() {
 
@@ -10,18 +10,18 @@ function App() {
 
     <div className="container">
 
-      <h1>Candidate Shortlisting System</h1>
+      <h1>AI Smart Complaint Management System</h1>
 
       <div className="card">
-        <CandidateForm />
+        <ComplaintForm />
       </div>
 
       <div className="card">
-        <CandidateList />
+        <ComplaintList />
       </div>
 
       <div className="card">
-        <MatchCandidates />
+        <ComplaintAnalysis />
       </div>
 
     </div>

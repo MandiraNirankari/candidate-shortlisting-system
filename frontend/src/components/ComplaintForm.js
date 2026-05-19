@@ -1,14 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
 
-function CandidateForm() {
+function ComplaintForm() {
 
     const [formData, setFormData] = useState({
         name: "",
         email: "",
-        skills: "",
-        experience: "",
-        bio: ""
+        title: "",
+        description: "",
+        category: "",
+        location: ""
     });
 
 
@@ -28,15 +29,9 @@ function CandidateForm() {
 
         try {
 
-            const candidateData = {
-                ...formData,
-                skills: formData.skills.split(","),
-                experience: Number(formData.experience)
-            };
-
             const response = await axios.post(
-                "https://candidate-backend-4qvl.onrender.com/api/candidates",
-                candidateData
+                "http://localhost:5000/api/complaints",
+                formData
             );
 
             alert(response.data.message);
@@ -44,16 +39,17 @@ function CandidateForm() {
             setFormData({
                 name: "",
                 email: "",
-                skills: "",
-                experience: "",
-                bio: ""
+                title: "",
+                description: "",
+                category: "",
+                location: ""
             });
 
         } catch (error) {
 
             console.log(error);
 
-            alert("Error adding candidate");
+            alert("Error submitting complaint");
 
         }
 
@@ -64,7 +60,7 @@ function CandidateForm() {
 
         <div>
 
-            <h2>Add Candidate</h2>
+            <h2>Register Complaint</h2>
 
             <form onSubmit={handleSubmit}>
 
@@ -90,35 +86,45 @@ function CandidateForm() {
 
                 <input
                     type="text"
-                    name="skills"
-                    placeholder="Skills (comma separated)"
-                    value={formData.skills}
-                    onChange={handleChange}
-                />
-
-                <br /><br />
-
-                <input
-                    type="number"
-                    name="experience"
-                    placeholder="Experience"
-                    value={formData.experience}
+                    name="title"
+                    placeholder="Complaint Title"
+                    value={formData.title}
                     onChange={handleChange}
                 />
 
                 <br /><br />
 
                 <textarea
-                    name="bio"
-                    placeholder="Bio"
-                    value={formData.bio}
+                    name="description"
+                    placeholder="Complaint Description"
+                    value={formData.description}
+                    onChange={handleChange}
+                />
+
+                <br /><br />
+
+                <input
+                    type="text"
+                    name="category"
+                    placeholder="Category"
+                    value={formData.category}
+                    onChange={handleChange}
+                />
+
+                <br /><br />
+
+                <input
+                    type="text"
+                    name="location"
+                    placeholder="Location"
+                    value={formData.location}
                     onChange={handleChange}
                 />
 
                 <br /><br />
 
                 <button type="submit">
-                    Add Candidate
+                    Submit Complaint
                 </button>
 
             </form>
@@ -129,4 +135,4 @@ function CandidateForm() {
 
 }
 
-export default CandidateForm;
+export default ComplaintForm;

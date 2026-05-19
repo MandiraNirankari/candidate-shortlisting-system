@@ -1,8 +1,7 @@
 body {
   margin: 0;
-  padding: 0;
   font-family: Arial, sans-serif;
-  background: #f4f7fc;
+  background-color: #f4f7fb;
 }
 
 .container {
@@ -14,35 +13,65 @@ body {
 h1 {
   text-align: center;
   color: #222;
+  margin-bottom: 30px;
 }
 
 .card {
   background: white;
-  padding: 20px;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #333;
   margin-bottom: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
 }
 
 input,
 textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-top: 10px;
-  border-radius: 5px;
   border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 100px;
 }
 
 button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: black;
+  background-color: #000;
   color: white;
   border: none;
-  border-radius: 5px;
+  padding: 12px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
 }
 
 button:hover {
-  opacity: 0.8;
+  background-color: #333;
+}
+
+.complaint-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #fafafa;
+}
+
+.ai-response {
+  background: #f1f5ff;
+  padding: 15px;
+  border-radius: 10px;
+  line-height: 1.6;
+  margin-top: 15px;
 }
